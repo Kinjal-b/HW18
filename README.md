@@ -37,30 +37,30 @@ Face verification is widely used in various applications, including security sys
 
 Face verification and face recognition are related but distinct processes within the broader field of biometric identification, each serving different purposes and employing different methodologies.    
 
-1. Face Verification (1:1 Matching)   
+#### Face Verification (1:1 Matching)   
 
-Purpose:    
+1. Purpose:    
 Face verification, also known as identity authentication, involves confirming or denying a person's claimed identity. It answers the question: "Is this person who they claim to be?"    
-Process:     
+2. Process:     
 In face verification, a single facial image is compared to a specific face image or template stored in a database to verify the claimed identity. The system performs a one-to-one (1:1) match to ascertain whether the two images belong to the same person.     
-Applications:     
+3. Applications:     
 This method is commonly used in security systems for access control (e.g., unlocking smartphones, secure entry to buildings, or logging into secure systems), where users must prove their identity against a pre-registered profile.
 
-2. Face Recognition (1:N Matching)     
-Purpose:      
+#### Face Recognition (1:N Matching)     
+1. Purpose:      
 Face recognition, also known as identity identification, is about identifying an individual from a pool of many faces. It seeks to answer the question: "Who is this person?" without prior claims about the individual's identity.     
-Process:     
+2. Process:     
 In face recognition, a facial image is compared against a database containing multiple faces to find a match. This process involves one-to-many (1:N) matching, where the system scans the database to find if there already exists a record that matches the given face.
-Applications:      
+3. Applications:      
 Face recognition is used in scenarios requiring the identification of individuals among many, such as surveillance systems, finding missing persons, tagging friends in social media photos, and managing customer identities in marketing analytics.
 
 #### Key Differences    
 
-Matching Approach:     
+1. Matching Approach:     
 Verification is a one-to-one matching process checking if the presented face matches a specific known face. Recognition is a one-to-many matching process, determining if the presented face matches any face within a larger dataset.
-Objective:      
+2. Objective:      
 Verification authenticates a claimed identity, essentially a binary yes/no decision. Recognition identifies an unknown face from a set of known faces, potentially returning the identity of the face.
-Use Cases:      
+3. Use Cases:      
 Verification is used for personal authentication tasks, while recognition is applied in scenarios requiring the identification or cataloging of individuals from a group or database.    
 
 In summary, the main distinction between face verification and face recognition lies in their objectives and the nature of their matching processes—verification confirms a claimed identity by comparing two faces, while recognition identifies a face from a group of many faces.

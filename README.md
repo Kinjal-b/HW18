@@ -210,6 +210,28 @@ While powerful, training with triplet loss can be challenging due to the need fo
 
 ### Answer:
 
+Neural Style Transfer (NST) is a technique in computer vision that blends two images—a content image and a style reference image—to create a new image that maintains the content of the first while adopting the artistic style of the second. This method leverages the capabilities of convolutional neural networks (CNNs) to separate and recombine content and style of images. Introduced by Gatys et al. in a seminal 2015 paper, NST has become a popular method for creating digital art and for applications in design and entertainment.
+
+#### How NST Works      
+
+NST typically involves the following steps, leveraging a pre-trained CNN (often VGGNet, due to its simple architecture and effectiveness in capturing image features):
+
+Content and Style Representation: The content of an image (shapes, objects, etc.) and the style (textures, colors, brush strokes) are represented as high-dimensional feature maps within the CNN. By feeding both the content and style images through the CNN, one can extract these feature representations at various layers. The content is usually captured from deeper layers of the network, where complex features are detected, while style is captured from multiple layers to encapsulate textures at different scales.
+
+Loss Functions: NST defines two main loss functions:
+
+Content Loss: Measures how much the content of the generated image differs from the content of the original content image. This is typically calculated as the mean squared error between the feature representations of the generated image and the content image at one or more layers within the CNN.
+Style Loss: Measures the difference in style between the generated image and the style reference image. It's often computed using the Gram matrix of the feature activations across different layers of the network. The Gram matrix captures the correlations between different features, representing the texture information. The style loss is the mean squared error between the Gram matrices of the generated and style images.
+Total Variation Loss: Sometimes, an additional loss term called total variation loss is included to encourage spatial smoothness in the generated image.
+
+Optimization: The generated image is initially a copy of the content image or random noise. It is then iteratively updated to minimize the combined loss (content loss + style loss + total variation loss). This optimization is typically performed using gradient descent algorithms.
+
+Iterative Refinement: Through iterative updates, the generated image progressively resembles the content of the content image while adopting the style of the style reference image. The process continues until the loss is minimized or a predefined number of iterations is reached.
+
+Importance and Applications
+NST has not only opened new avenues in digital art creation, allowing users to apply famous artistic styles to their photographs, but it also has practical applications in graphic design, entertainment, and advertising. Furthermore, the development and popularity of NST have spurred research into understanding how deep learning models perceive and process artistic style, contributing to broader discussions in AI about creativity and the interpretation of visual information.
+
+The versatility and accessibility of NST have made it a popular tool not just among artists and designers but also as a demonstration of the power of deep learning to manipulate and understand the complex world of visual information.
 
 ### Q7. Describe style cost function.
 

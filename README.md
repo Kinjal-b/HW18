@@ -247,5 +247,25 @@ The versatility and accessibility of NST have made it a popular tool not just am
 
 ### Q7. Describe style cost function.
 
-### Answer:
+### Answer:       
 
+The style cost function is a fundamental component of neural style transfer, a technique used to apply the style of one image (the "style image") to the content of another image (the "content image"), creating a new, stylistically altered image. This approach leverages Convolutional Neural Networks (CNNs) and was popularized by Gatys et al. in their pioneering paper on neural style transfer.        
+
+#### How It Works:           
+
+The style cost function measures the difference between the style of two images. The style of an image is defined by the correlations between the activations across different layers of a CNN. These correlations are captured in what are called Gram matrices, which are computed for both the generated image (the image being transformed) and the style reference image. The style cost function aims to minimize the differences between the Gram matrices of the generated image and the style image across multiple layers of the CNN, thus making the generated image's style closer to that of the style image.
+
+#### Calculation of the Style Cost Function:       
+
+Feature Extraction: Pass the style image and the generated image through a pre-trained CNN (e.g., VGGNet). For each selected layer, extract the feature maps. These layers are typically chosen from across different depths of the network to capture both low-level details (e.g., edges, textures) and high-level features (e.g., patterns, object parts).
+
+Gram Matrix: For each selected layer, calculate the Gram matrix of the feature maps. The Gram matrix is the inner product of the feature maps' vectorized form with itself, resulting in a matrix that captures the correlation between different filter responses. The Gram matrix emphasizes the patterns and textures present in the layer, abstracting away spatial structures.
+
+Style Loss: For each layer where the Gram matrix was computed, calculate the difference between the Gram matrices of the generated image and the style image. This difference is often measured using the Mean Squared Error (MSE) between the two matrices. The style loss for each layer can be weighted to emphasize or de-emphasize certain layers according to their importance in style representation.
+
+Total Style Cost: Sum up the weighted style losses across all selected layers to get the total style cost. This cost quantifies how much the style of the generated image deviates from that of the style image.
+
+Purpose and Use:
+The style cost function is designed to guide the transformation of the generated image in such a way that it mimics the artistic style of the style reference image. When used in conjunction with a content cost function (which preserves the content of the content image in the generated image), the style cost function enables the neural style transfer algorithm to generate images that blend the content of one image with the style of another.
+
+The style cost function plays a critical role in the field of computer vision and graphics, enabling creative and artistic modifications of images that were previously difficult or impossible to achieve with traditional image processing techniques. It has applications in art generation, photo editing, and even in enhancing the visual coherence of synthetic images in simulation environments.

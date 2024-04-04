@@ -122,19 +122,23 @@ The selection of a similarity measurement method should consider the nature of t
 
 ### Answer:
 
-Siamese networks are a special type of neural network architecture designed to compare two input samples and determine how similar they are. This architecture is particularly useful in applications where we need to measure the similarity or the difference between two inputs, such as in face verification, signature verification, and many other tasks where the relationship between two samples is of interest. The key characteristics and components of Siamese networks include:
+Siamese networks are a special type of neural network architecture designed to compare two input samples and determine how similar they are. This architecture is particularly useful in applications where we need to measure the similarity or the difference between two inputs, such as in face verification, signature verification, and many other tasks where the relationship between two samples is of interest.         
 
-Twin Networks
+The key characteristics and components of Siamese networks include:
+
+1. Twin Networks        
 Siamese networks consist of two identical subnetworks, each processing one of the two inputs. These subnetworks have the same configuration with the same parameters and weights, hence the name "Siamese" (suggesting twins). The shared parameters ensure that both inputs are processed in the same way, allowing the network to learn feature representations that are comparable.
 
-Feature Extraction
+2. Feature Extraction           
 Each subnetwork acts as a feature extractor, converting input samples into vectors in a high-dimensional space. The architecture of these subnetworks can be tailored to the specific type of input data (e.g., convolutional layers for images, recurrent layers for sequences). The goal is to transform raw data into a form where similar samples result in similar feature vectors, and dissimilar samples result in divergent vectors.
 
-Similarity Measurement
+3. Similarity Measurement             
 After processing the inputs through the subnetworks, Siamese networks usually employ a similarity measure or a distance metric to evaluate the closeness of the two feature vectors. Common choices for the similarity measure include the Euclidean distance, cosine similarity, or Manhattan distance. The exact choice of metric can depend on the specific requirements of the task.
 
-Loss Function
-Training Siamese networks involves using a specialized loss function that encourages the network to output similar feature vectors for similar input pairs and dissimilar vectors for dissimilar input pairs. A popular choice is the contrastive loss, which penalizes large distances between similar pairs and small distances between dissimilar pairs, up to a margin. Another common loss function is the triplet loss, which compares a base input to both a positive (similar) and a negative (dissimilar) input in the same training step.
+#### Loss Function            
+
+Training Siamese networks involves using a specialized loss function that encourages the network to output similar feature vectors for similar input pairs and dissimilar vectors for dissimilar input pairs.            
+A popular choice is the contrastive loss, which penalizes large distances between similar pairs and small distances between dissimilar pairs, up to a margin. Another common loss function is the triplet loss, which compares a base input to both a positive (similar) and a negative (dissimilar) input in the same training step.
 
 #### Applications      
 

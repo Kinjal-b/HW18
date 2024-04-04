@@ -136,16 +136,30 @@ After processing the inputs through the subnetworks, Siamese networks usually em
 Loss Function
 Training Siamese networks involves using a specialized loss function that encourages the network to output similar feature vectors for similar input pairs and dissimilar vectors for dissimilar input pairs. A popular choice is the contrastive loss, which penalizes large distances between similar pairs and small distances between dissimilar pairs, up to a margin. Another common loss function is the triplet loss, which compares a base input to both a positive (similar) and a negative (dissimilar) input in the same training step.
 
-Applications
+#### Applications      
+
 Siamese networks are particularly well-suited for tasks that involve comparison between two inputs, such as:
 
-Face Verification: Determining whether two face images belong to the same person.
-Signature Verification: Checking if two signatures were made by the same person.
-One-shot Learning: Classifying inputs when only one or a few examples are available per class, by comparing test samples directly to the few known samples.
-Advantages
-Efficient Data Usage: Siamese networks can learn useful representations with relatively little data by focusing on pairwise comparisons.
-Generalization: They are capable of generalizing well to new classes not seen during training, making them suitable for one-shot learning scenarios.
-Flexibility: The architecture can be adapted to different types of data and tasks by changing the subnetworks and the similarity measure.
+Face Verification:        
+Determining whether two face images belong to the same person.
+
+Signature Verification:        
+Checking if two signatures were made by the same person.
+
+One-shot Learning:            
+Classifying inputs when only one or a few examples are available per class, by comparing test samples directly to the few known samples.          
+
+#### Advantages       
+
+1. Efficient Data Usage:              
+Siamese networks can learn useful representations with relatively little data by focusing on pairwise comparisons.                 
+
+2. Generalization:                   
+They are capable of generalizing well to new classes not seen during training, making them suitable for one-shot learning scenarios.               
+
+3. Flexibility:               
+The architecture can be adapted to different types of data and tasks by changing the subnetworks and the similarity measure.            
+
 Siamese networks offer a powerful framework for learning to compare and contrast samples, making them a valuable tool for a wide range of applications where the relationship between data samples is key.
 
 ### Q5. What is triplet loss and why is it needed?
